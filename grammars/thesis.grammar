@@ -1,0 +1,44 @@
+NOUN[POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] -> NOUN[PRON=POS] NOUN[BAR=2, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]
+NOUN[POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e] -> NOUN[PRON=DEM, BAR=0, POSS=?a, PLUR=?b, ANP=?c, CAS=?d] ART NOUN[PRON=0, BAR=2, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=0]
+NOUN[POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] -> NOUN[PRON=GEN] NOUN[BAR=2, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] 
+NOUN[POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] -> NOUN[PRON=INDEF] NOUN[BAR=2, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]
+NOUN[BAR=1, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] -> ADJ NOUN[BAR=0, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]
+NOUN[BAR=1, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] -> NOUN[BAR=0, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]
+NOUN[BAR=1, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0] -> ADJ NOUN[BAR=0, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0]
+NOUN[BAR=1, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0] -> NOUN[BAR=0, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0]
+NOUN[BAR=2, POSS=?a, PLUR=0, ANP=?c, CAS=?d, D=?e, PRON=?f] -> NUM NOUN[BAR=1, POSS=?a, PLUR=0, ANP=?c, CAS=?d, D=?e, PRON=?f]
+NOUN[BAR=2, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] -> NOUN[BAR=1, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]
+NOUN[BAR=2, POSS=?a, PLUR=0, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0] -> NUM NOUN[BAR=1, POSS=?a, PLUR=0, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0]
+NOUN[BAR=2, POSS=?b, PLUR=0, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0] -> NOUN[BAR=1, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e]/NOUN[BAR=0, PRON=?f]
+NOUN[BAR=3, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] -> ART[D=?e] NOUN[BAR=2, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, PRON=?f]
+NOUN[BAR=3, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=1, PRON=?f] -> NOUN[BAR=0, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=1, PRON=?f]
+NOUN[BAR=3, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f]/NOUN[BAR=0] -> ART[D=?e] NOUN[BAR=2, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, PRON=?f]/NOUN[BAR=0]
+NOUN[BAR=3, POSS=0, PLUR=?a, ANP=?b, CAS=?c, D=1, PRON=?f] -> NOUN[BAR=3, ANP=0, CAS=0] NOUN[BAR=2, POSS=1, PLUR=?a, ANP=?b, CAS=?c, PRON=?f]
+NOUN[BAR=4, POSS=0, PLUR=?a, ANP=?b, CAS=?c, D=1, PRON=?f] -> NOUN[BAR=3, CAS=[DAT=1]] NOUN[BAR=3, POSS=1, PLUR=?a, ANP=?b, CAS=?c, D=1, PRON=?f]
+NOUN[BAR=3, POSS=0, PLUR=?a, ANP=?b, CAS=?c, D=1, PRON=?f] -> ART[BAR=1, D=1, ME=?d, YOU=?e, PLUR=?f] NOUN[BAR=2, POSS=[ME=?d,YOU=?e,PLUR=?f], PLUR=?a,ANP=?b,CAS=?c,PRON=?f]
+NOUN[BAR=3, POSS=0, PLUR=?a, ANP=?b, CAS=?c, D=1, PRON=?f] -> ART[BAR=0] NOUN[BAR=2, POSS=[], PLUR=?a, ANP=?b, CAS=?c, PRON=?f]
+NOUN[POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f, BAR=?g] -> PUNCT[TYPE='DQUOTE'] NOUN[BAR=?g, POSS=?a, PLUR=?b, ANP=?c, CAS=?d, D=?e, PRON=?f] PUNCT[TYPE='DQUOTE']
+NOUN/NOUN ->
+ART[BAR=1, D=1, ME=?a, YOU=?b, PLUR=?c, PRON=?f] -> ART[D=1] PRO[ME=?a, YOU=?b, PLUR=?c, PRON=?f]
+ART[D=1] -> DET
+ADJ -> ADJ ADJ
+ADJ -> ADV ADJ
+ADJ -> NOUN ADJ[SRC=[STEM=VERB[], DERIV='PERF_PART']]
+ADJ -> NOUN ADJ[SRC=[STEM=VERB[], DERIV='IMPERF_PART']]
+ADJ -> PUNCT[TYPE='DQUOTE'] ADJ PUNCT[TYPE='DQUOTE']
+ADJ -> ADJ PUNCT[TYPE=COMMA] ADJ
+ADJ -> ADJ PUNCT[TYPE=COMMA] CONJ ADJ
+NUM -> NUM NUM
+NUM -> ADV NUM
+NUM -> ADJ NUM
+
+#Terminal rules for miscellaneous symbols
+NOUN[BAR=0] -> '<NO_KR>'
+NOUN[BAR=0] -> 'UNKNOWN'
+NOUN[BAR=0] -> 'ABBR'
+NOUN[BAR=0] -> '0-0'
+NOUN[BAR=0] -> 'E'
+NOUN[BAR=0] -> 'TYPO'
+NOUN[BAR=0] -> 'VERB<MODAL>OWN'
+
+#Terminal rules
