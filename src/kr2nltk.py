@@ -8,17 +8,18 @@ class Kr2NltkConverter():
         self.defaultValues = ConfigParser.SafeConfigParser()
         self.defaultValues.read(defaultsFile)
 
-
     def node2nltk(self, node, top=False, src=None):
         name = node.value
+        if name == '': return ''
         children = [self.node2nltk(snode) for snode in node.children]
         if src:
             children.append(src)       
+        elif top:
+            children.append('SRC=0')
+
         if self.defaultValues.has_section(name):
             children += self.getDefaults(children, name)
         if children == []:
-            
-            if top: return name
             childrenString = '1'
         else:
             childrenString = '['+', '.join(children)+']'
@@ -46,8 +47,8 @@ class Kr2NltkConverter():
         lastSrc='SRC=0'
         if derivations!=[]:
             lastSrc = self.getSrcString(self.node2nltk(derivations[0][0],
-                      top=True), 
-                      nodes[0].value)    
+                      top = True), 
+                      self.node2nltk(nodes[0], top = True))    
             
             for deriv, node in zip(derivations[1:], nodes[1:-1]):
                 nodeString = self.node2nltk(node, top=True, src=lastSrc)

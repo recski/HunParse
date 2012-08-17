@@ -134,20 +134,29 @@ def tagMaxNPs(chart, sen, useCfg):
     
     printTagging(sen, disjunctSpans)
 
+def countNounsInSpan(span, sen):
+    inflKrs = [kr.split('/')[-1] for kr in [line.strip().split()[1]
+               for line in sen[span[0]:span[1]]]]
+    c = sum( [1 for kr in inflKrs if kr.startswith('NOUN')] )    
+    #print span, inflKrs, c
+    return c
 
 def tagBaseNPs(chart, sen):
     nEdges = [edge for edge in chart if isNoun(edge)]
     #melyik edge ir ujra Noun-t?
-    #print 'nEdges', nEdges
-    npSpans = [edge.span() for edge in nEdges if containsNoun(edge.rhs())==1]
+    #print 'nSpans', [e.span() for e in nEdges]
+    #for edge in nEdges:
+    #    print edge.span(), containsNoun(edge.rhs())
+    npSpans = [edge.span()
+                   for edge in nEdges if containsNoun(edge.rhs())==1
+                   and edge.span()[0]!=edge.span()[1]]
     #print 'npSpans', npSpans
     #melyik span tartalmaz pontosan 1 Nount legalabb 1 edge szerint
-    baseNpSpans = set([span for span in npSpans if span[0]!=span[1]])
+    
+    baseNpSpans = set([span for span in npSpans
+                       if countNounsInSpan(span, sen)<2])
+    #melyik span-ben nincs egynel tobb fonev
     #print 'baseNpSpans', baseNpSpans
-    for edge in chart:
-        if edge.is_complete() and containsNoun(edge.rhs())>1 and edge.span() in baseNpSpans:
-            baseNpSpans.remove(edge.span())
-    #melyik span nem irodik ujra tobb noun-kent (semelyik edge szerint)
     uncrossingSpans = keepUnCrossing(baseNpSpans)
     #print 'uncrossingSpans', uncrossingSpans
     longestSpans = keepLongestSpans(uncrossingSpans)
@@ -191,7 +200,7 @@ def containsNoun(edgeSide):
         for key in symbol.keys():
             if type(key)!=str and symbol[key]=='NOUN':
                 c+=1
-    
+    #print c
     return c
 
 def isContained(span, spans):        

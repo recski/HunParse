@@ -1,11 +1,8 @@
 [NOUN]
 CAS = 0
-SRC = 0
 
 [ADJ]
 CAS = 0
-SRC = 0
 
 [NUM]
 CAS = 0
-SRC = 0
